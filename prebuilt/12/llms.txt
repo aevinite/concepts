@@ -1,0 +1,57 @@
+# Aevinite
+
+> Aevinite helps businesses grow. It is a company based in Ahmedabad, Gujarat, India, founded on 28 July 2024 by Rishi Nakrani (Founder) and Jenish Patel (Co-Founder). It started under the name Infinite and was renamed Aevinite on 16 June 2026. It helps businesses grow with websites, software and automation built around how each business works, and it makes two products of its own: Aevidine (restaurant software) and Campus Conveyance (a student transport app). Tagline: "We help businesses grow." Website: https://www.aevinite.com
+
+## Key facts
+
+- Name: Aevinite (formerly Infinite)
+- Founded: 28 July 2024, Ahmedabad, Gujarat, India
+- Founder: Rishi Nakrani (https://www.linkedin.com/in/rishinakrani/)
+- Co-Founder: Jenish Patel (https://www.linkedin.com/in/jenish-patel-a5608a398/)
+- Renamed from Infinite to Aevinite: 16 June 2026
+- Headquarters: Ahmedabad, Gujarat, India
+- What it does: helps businesses grow (websites, software, automation)
+- Team size: 2-10
+- Name meaning: derived from Aevum, a dimension of existence with a beginning but no end; it also echoes Infinite, the original name.
+- Not to be confused with: aerinite (a mineral), Aevi (payments), Aevex (aerospace), aeVidi.
+
+## How Aevinite helps businesses grow
+
+- Web and app development: websites, web apps and mobile-friendly interfaces.
+- Custom systems: business software built around how a company actually works.
+- Process automation and AI integration: removing repetitive work and adding AI where it helps.
+- Cloud platforms and growth infrastructure for products that need to scale.
+- 3D and interactive web experiences.
+
+## Work
+
+- [Aevidine](https://www.aevinite.com/aevidine): Aevinite's restaurant management software. Guests order from a QR code menu at the table; the kitchen gets each order as a KOT on a screen and printer; waiters, managers and the owner run tables, bills, GST invoices and reports from their own screens. Works offline. Made in Ahmedabad for restaurants across India.
+- [Campus Conveyance](https://www.aevinite.com/campus): Aevinite's student transport app for schools and colleges. Students and parents book a bus seat and pay by UPI, watch the bus live (the driver's phone is the tracker, no GPS box), and are told when the child boards by a QR scan at the door. Separate panels for drivers, schools/colleges, transport agencies and an admin. Web and Android. Made in Ahmedabad.
+- Multispeciality hospital website: a trust-first site with services, doctor profiles and appointment information.
+- 4D Dish Explorer: an interactive viewer where each dish is a real 3D model you can rotate and explore.
+- HackJudge: a hackathon management and judging platform for events, teams, judges and scoring.
+- Sweet Bites (Neon Bakery): a scroll-driven 3D showcase.
+
+## Pages
+
+- [Home](https://www.aevinite.com/): services, selected work and how Aevinite works.
+- [Aevidine](https://www.aevinite.com/aevidine): the restaurant software: QR ordering, KOT, billing, reports.
+- [Campus Conveyance](https://www.aevinite.com/campus): the student transport app: seat booking, UPI, live bus, QR boarding.
+- [Guides](https://www.aevinite.com/guides): plain guides for restaurant owners in India.
+  - [QR code ordering for restaurants in India](https://www.aevinite.com/guides/qr-code-ordering-for-restaurants-india): how it works and what to check.
+  - [What is a KOT (kitchen order ticket)](https://www.aevinite.com/guides/what-is-a-kot-kitchen-order-ticket): and when to move to a kitchen screen.
+  - [What a restaurant GST bill in India must show](https://www.aevinite.com/guides/restaurant-gst-bill-checklist-india): a checklist.
+  - [Restaurant QR ordering and KOT billing software in Ahmedabad](https://www.aevinite.com/guides/restaurant-qr-ordering-kot-billing-software-ahmedabad): what to look for and what to ask.
+- [About](https://www.aevinite.com/about): founders, company story and frequently asked questions.
+- [Contact](https://www.aevinite.com/contact): contact form, email and phone.
+
+## Contact
+
+- Email: rishi@aevinite.com
+- Phone and WhatsApp: +91 90997 23703
+- LinkedIn: https://www.linkedin.com/company/aevinite/
+- Instagram: https://www.instagram.com/aevinite/
+- GitHub: https://github.com/aevinite
+- Crunchbase: https://www.crunchbase.com/organization/aevinite
+- Medium (guides): https://medium.com/@aevinite
+- Facebook: https://www.facebook.com/61595132492927

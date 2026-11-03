@@ -11,8 +11,9 @@ createServer((req, res) => {
   if (!url.startsWith("/concepts/")) { res.writeHead(302, { Location: "/concepts/" }); return res.end(); }
   let file = join(dist, url.slice("/concepts".length));
   if (!file.startsWith(dist)) { res.writeHead(403); return res.end(); }
-  if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
-  if (!existsSync(file) && existsSync(file + ".html")) file += ".html";
+  // Same order as GitHub Pages: "/x" → x.html before x/index.html.
+  if (!url.endsWith("/") && existsSync(file + ".html")) file += ".html";
+  else if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
   if (!existsSync(file)) { res.writeHead(404); return res.end("404"); }
   const size = statSync(file).size;
   const type = T[extname(file)] ?? "application/octet-stream";
