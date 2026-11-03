@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Aevinite · Twelve versions</title>
+<meta name="description" content="Ten new concepts for aevinite.com, the site before the redesign, and the current site, side by side.">
+<link rel="icon" href="media/aevinite-mark.webp">
+<style>
+@font-face{font-family:"Hub Sans";src:url(fonts/sans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+@font-face{font-family:"Hub Serif";src:url(fonts/serif-italic.woff2) format("woff2");font-style:italic;font-display:swap}
+:root{--bg:#f4f2ec;--ink:#121318;--muted:#5d606a;--line:#d9d6cc;--accent:#1d4ed8;--card:#fbfaf6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Hub Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(40px,8vw,96px) 20px 80px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(44px,8vw,92px);line-height:.95;letter-spacing:-.035em;font-weight:600;margin:14px 0 18px}
+h1 em{font-family:"Hub Serif",Georgia,serif;font-weight:400;color:var(--accent);letter-spacing:-.01em}
+.lede{max-width:560px;color:var(--muted);font-size:18px;margin:0}
+ol{list-style:none;padding:0;margin:56px 0 0;border-top:1px solid var(--line)}
+li a{display:grid;grid-template-columns:64px 1fr auto;gap:8px 20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .25s,padding .25s}
+li a:hover,li a:focus-visible{background:var(--card);padding-left:14px;outline:none}
+.n{font-variant-numeric:tabular-nums;font-size:15px;color:var(--muted)}
+.name{font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.name small{display:block;font-size:15px;font-weight:400;letter-spacing:0;color:var(--muted);margin-top:6px;line-height:1.45}
+.state{font-size:13px;white-space:nowrap;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.state.ready{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+li[data-off] a{pointer-events:none}
+li[data-off] .name{color:#8b8d94}
+.sep{padding:34px 4px 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+footer{margin-top:48px;color:var(--muted);font-size:14px}
+@media (max-width:640px){li a{grid-template-columns:40px 1fr}.state{grid-column:2;justify-self:start}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Aevinite · drafts, not indexed by Google</p>
+  <h1>Twelve versions of <em>aevinite.com</em></h1>
+  <p class="lede">Ten new concepts, each its own world with a light mode and a dark mode that look nothing alike. Then the site before the redesign, and the site live today. Open each on a laptop and a phone, try the toggle at the top right, and pick the one that should become aevinite.com.</p>
+  <ol id="list"></ol>
+  <footer>Every fact on every concept comes from one shared file, so they all tell the same true story.</footer>
+</main>
+<script>
+// ready: true once the concept has passed its checks and is published.
+const C = [
+  [1, "Patang", "Ahmedabad's kite festival. Fly a kite, cut the others. Day sky / lantern night.", false],
+  [2, "Tiny Town", "A miniature 3D town that runs on our software. Clay morning / night shift.", false],
+  [3, "AevOS", "The site is an operating system. 1-bit desktop / amber phosphor.", false],
+  [4, "Big Type", "Kinetic typography that grows. Swiss poster / chrome on a stage.", false],
+  [5, "Panels", "A comic book with the real stories. Sunday colour / noir in the rain.", false],
+  [6, "The Pass", "A kitchen ticket printer. Café counter / the line at 9 pm.", false],
+  [7, "Drafting Table", "Engineering drawings with real physics. Blueprint / playable pinball.", false],
+  [8, "Ink", "Paint with fluid. Ebru marbling / bioluminescent sea.", false],
+  [9, "Saap Sidi", "Snakes and ladders. Painted cloth / Diwali night.", false],
+  [10, "Side A", "A record label. Spin the record to scrub the film. Record shop / club night.", false],
+];
+const list = document.getElementById("list");
+const row = (n, name, desc, ready, label) => {
+  const li = document.createElement("li");
+  if (!ready) li.dataset.off = "";
+  li.innerHTML = `<a href="${n}/"><span class="n">${String(n).padStart(2, "0")}</span><span class="name">${name}<small>${desc}</small></span><span class="state${ready ? " ready" : ""}">${label ?? (ready ? "Open" : "Being built")}</span></a>`;
+  list.append(li);
+};
+C.forEach(([n, name, desc, ready]) => row(n, name, desc, ready));
+const sep = document.createElement("li"); sep.className = "sep"; sep.textContent = "For comparison"; list.append(sep);
+row(11, "The old site", "aevinite.com before 31 October 2026: dark, neon, stars.", true, "Open");
+row(12, "The current site", "aevinite.com today: light by default, the blue infinity, both products.", true, "Open");
+</script>
+</body>
+</html>
