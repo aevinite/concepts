@@ -1,0 +1,11 @@
+import "@fontsource/barlow-condensed/latin-500.css";
+import "@fontsource/barlow-condensed/latin-600.css";
+import "@fontsource/barlow-condensed/latin-700.css";
+import "@fontsource/barlow-condensed/latin-800.css";
+import "@fontsource-variable/archivo/index.css";
+import "@fontsource-variable/jetbrains-mono/index.css";
+import "@fontsource/bungee/latin-400.css";
+import "@fontsource/bungee-shade/latin-400.css";
+import "@fontsource/kalam/latin-400.css";
+import "./css/base.css";
+import "./css/sections.css";
