@@ -20,6 +20,11 @@ h1 em{font-family:"Hub Serif",Georgia,serif;font-weight:400;color:var(--accent);
 .lede{max-width:560px;color:var(--muted);font-size:18px;margin:0}
 ol{list-style:none;padding:0;margin:56px 0 0;border-top:1px solid var(--line)}
 li a{display:grid;grid-template-columns:64px 1fr auto;gap:8px 20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .25s,padding .25s}
+.shots{grid-column:2/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.shots figure{margin:0}
+.shots img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:6px;border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+li a:hover .shots img{transform:translateY(-3px)}
+.shots figcaption{font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
 li a:hover,li a:focus-visible{background:var(--card);padding-left:14px;outline:none}
 .n{font-variant-numeric:tabular-nums;font-size:15px;color:var(--muted)}
 .name{font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
@@ -30,7 +35,7 @@ li[data-off] a{pointer-events:none}
 li[data-off] .name{color:#8b8d94}
 .sep{padding:34px 4px 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
 footer{margin-top:48px;color:var(--muted);font-size:14px}
-@media (max-width:640px){li a{grid-template-columns:40px 1fr}.state{grid-column:2;justify-self:start}}
+@media (max-width:640px){li a{grid-template-columns:40px 1fr}.state{grid-column:2;justify-self:start}.shots{grid-column:1/-1;gap:8px}}
 </style>
 </head>
 <body>
@@ -56,15 +61,17 @@ const C = [
   [10, "Side A", "A record label. Spin the record to scrub the film. Record shop / club night.", false],
 ];
 const list = document.getElementById("list");
-const row = (n, name, desc, ready, label) => {
+const shot = (n, t, label) => `<figure><img src="thumbs/${n}-${t}.webp" width="720" height="450" loading="lazy" alt="${label} of concept ${n}"><figcaption>${label}</figcaption></figure>`;
+const row = (n, name, desc, ready, label, themes = ["light", "dark"]) => {
   const li = document.createElement("li");
   if (!ready) li.dataset.off = "";
-  li.innerHTML = `<a href="${n}/"><span class="n">${String(n).padStart(2, "0")}</span><span class="name">${name}<small>${desc}</small></span><span class="state${ready ? " ready" : ""}">${label ?? (ready ? "Open" : "Being built")}</span></a>`;
+  const shots = ready ? `<span class="shots">${themes.map((t) => shot(n, t, t === "light" ? "Light" : "Dark")).join("")}</span>` : "";
+  li.innerHTML = `<a href="${n}/"><span class="n">${String(n).padStart(2, "0")}</span><span class="name">${name}<small>${desc}</small></span><span class="state${ready ? " ready" : ""}">${label ?? (ready ? "Open" : "Being built")}</span>${shots}</a>`;
   list.append(li);
 };
 C.forEach(([n, name, desc, ready]) => row(n, name, desc, ready));
 const sep = document.createElement("li"); sep.className = "sep"; sep.textContent = "For comparison"; list.append(sep);
-row(11, "The old site", "aevinite.com before 31 October 2026: dark, neon, stars.", true, "Open");
+row(11, "The old site", "aevinite.com before 31 October 2026: dark only, neon, stars.", true, "Open", ["dark"]);
 row(12, "The current site", "aevinite.com today: light by default, the blue infinity, both products.", true, "Open");
 </script>
 </body>
