@@ -5,7 +5,7 @@ import { execSync } from "node:child_process";
 import { cpSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 
 const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null;
-const sites = readdirSync("sites").filter((d) => /^\d+$/.test(d) && existsSync(`sites/${d}/index.html`)).sort((a, b) => a - b);
+const sites = (existsSync("sites") ? readdirSync("sites") : []).filter((d) => /^\d+$/.test(d) && existsSync(`sites/${d}/index.html`)).sort((a, b) => a - b);
 for (const s of only ? [only] : sites) {
   console.log(`\n▶ building concept ${s}`);
   execSync("npx vite build --logLevel warn", { stdio: "inherit", env: { ...process.env, SITE: s } });
