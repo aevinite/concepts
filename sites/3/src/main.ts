@@ -1,0 +1,21 @@
+import "@fontsource/silkscreen/400.css";
+import "@fontsource/silkscreen/700.css";
+import "@fontsource-variable/pixelify-sans/wght.css";
+import "@fontsource/vt323/400.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/600.css";
+import "./style.css";
+import { initTheme } from "@shared/theme";
+import { media } from "@shared/content";
+import { conceptBadge } from "@shared/badge";
+import { mountOS } from "./os";
+import { boot } from "./boot";
+import type { Page } from "./views";
+
+const page = (document.body.dataset.page ?? "home") as Page;
+initTheme(3);
+document.documentElement.style.setProperty("--mark", `url("${media("aevinite-mark.webp")}")`);
+document.querySelector("noscript")?.remove();
+const os = mountOS(page);
+boot(() => os.start());
+conceptBadge(3, "AevOS");
